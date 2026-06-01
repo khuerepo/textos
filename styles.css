@@ -1,0 +1,211 @@
+/* --- TOKENS DE DISEÑO: CIÉNEGA + CHARAL --- */
+:root {
+    --bg:          #181512; /* Polvo de volcán / Fondo principal oscuro */
+    --bg2:         #231e19; /* Fondo secundario */
+    --tierra:      #7a5a3a; /* Barro / Bordes hover */
+    --barro:       #a07048; /* Acento intermedio */
+    --maiz:        #b8923a; /* Oro seco / Años y etiquetas */
+    --lago:        #6a8a94; /* Gris-azul del lago */
+    --plata:       #a8bec4; /* Banda plateada del charal / Títulos Ballet */
+    --text:        #ddd4c0; /* Crema / Cuerpo de texto */
+    --muted:       #7a6e60; /* Texto secundario / Desactivado */
+    --border:      rgba(168,190,196,0.12);
+    --border-warm: rgba(160,112,72,0.20);
+}
+
+/* Resets Básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+html, body {
+    min-height: 100%;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* --- LOGOTIPO PNG GLOBAL --- */
+.site-logo {
+    max-width: 130px; /* Ajusta según el tamaño de tu archivo PNG */
+    height: auto;
+    display: block;
+    margin: 0 auto 16px;
+}
+
+.site-title {
+    font-family: 'Ballet', cursive;
+    font-size: 5em;
+    font-weight: 400;
+    color: var(--plata); /* Color Plata Charal */
+    margin-bottom: 64px;
+    line-height: 1;
+}
+
+/* --- PANTALLA DE INICIO (LANDING / INDEX) --- */
+.landing-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    text-align: center;
+    background-color: var(--bg);
+}
+
+.button-container {
+    margin-top: 24px;
+}
+
+.minimal-button {
+    font-family: 'Ballet', cursive;
+    font-size: 2.2em;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 10px 40px;
+    border: 1px solid var(--border-warm);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Efecto hover elegante para el botón de inicio */
+.minimal-button:hover {
+    color: var(--plata);
+    border-color: var(--tierra);
+    background-color: var(--bg2);
+}
+
+/* --- CONTENEDOR PRINCIPAL: CATALOGO DIRECTO --- */
+.catalog-container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+/* Lista del Catálogo */
+.catalog-list {
+    text-align: left; /* Volvemos a la izquierda para la lectura fluida del listado */
+    margin-top: 40px;
+}
+
+.year-group {
+    margin-bottom: 56px;
+}
+
+.year-label {
+    font-size: 0.75em;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--maiz); /* Toque dorado/maíz para el año */
+    margin-bottom: 16px;
+    display: block;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-warm);
+}
+
+.cat-entry {
+    display: flex;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+}
+
+.cat-title-link {
+    font-family: 'Ballet', cursive !important;
+    font-size: 2.3em;
+    font-weight: 400;
+    color: var(--plata); /* Color Plata Charal */
+    min-width: 220px;
+    line-height: 1;
+}
+
+.cat-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05em;
+    font-style: italic;
+    color: var(--muted);
+    margin-left: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Hovers minimalistas basados en la tierra y plata */
+.cat-entry:hover .cat-title-link {
+    color: var(--text);
+}
+.cat-entry:hover .cat-description {
+    color: var(--tierra);
+}
+
+/* --- PANTALLA DE LECTURA (Para poemas individuales) --- */
+.reading-screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 40px;
+    background: var(--bg);
+}
+
+.poem-title {
+    font-family: 'Ballet', cursive;
+    font-size: 4.5em;
+    font-weight: 400;
+    color: var(--plata); /* Color Plata Charal */
+    margin-bottom: 48px;
+    line-height: 1;
+    text-align: center;
+}
+
+.poem-body {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 1.3em;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 2.2;
+    color: var(--text);
+    text-align: center;
+    max-width: 540px;
+    white-space: pre-wrap;
+}
+
+/* Navegación del Poema */
+.reading-nav {
+    margin-top: 64px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.reading-nav a {
+    font-family: 'Ballet', cursive;
+    font-size: 1.4em;
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.reading-nav a:hover {
+    color: var(--plata);
+}
+
+/* Ajustes pantallas pequeñas */
+@media (max-width: 768px) {
+    .site-title { font-size: 3.8em; margin-bottom: 40px; }
+    .cat-entry { flex-direction: column; gap: 6px; padding: 16px 0; }
+    .cat-description { margin-left: 0; font-size: 0.95em; width: 100%; }
+    .poem-title { font-size: 3.2em; }
+    
+    /* Adaptación del botón en móviles */
+    .minimal-button { font-size: 1.8em; padding: 8px 32px; }
+}

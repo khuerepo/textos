@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>khuerepo</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="icon" type="image/png" href="icon.png"> 
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* Regla específica para hacer más grande el logo en la página de inicio */
+        .landing-container .site-logo {
+            max-width: 600px; 
+            margin-bottom: 10px;
+        }
+
+        /* Transformamos el botón en un texto puro y minimalista */
+        .landing-container .minimal-button {
+            font-family: 'Ballet', cursive !important;
+            font-size: 3em; /* Un poco más grande para darle presencia al ser solo texto */
+            color: var(--plata);
+            text-decoration: none;
+            text-transform: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+            
+            /* Quitamos cualquier rastro de bordes, fondos o sombras que heredara del CSS */
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+        }
+
+        /* Efecto sutil al pasar el cursor sobre el texto */
+        .landing-container .minimal-button:hover {
+            color: var(--text);
+            transform: scale(1.02); /* Crece un milímetro de forma muy orgánica */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="landing-container">
+        <img src="logo.png" alt="khuerepo logo" class="site-logo">
+        
+        <div class="button-container">
+            <a href="catalog.html" class="minimal-button">khuerepo</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>obras</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icon.png"> 
+    <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        .catalog-container .site-logo {
+            max-width: 200px;
+            margin: 0 auto 32px;
+            display: block;
+        }
+
+        .catalog-controls {
+            margin: 12px 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .filter-menu {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            padding: 4px 8px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            color: var(--maiz);
+        }
+
+        .cat-entry {
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        
+        .cat-entry.hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="catalog-container">
+        
+        <img src="logo.png" alt="khuerepo logo" class="site-logo">
+        
+        <div class="catalog-controls">
+            <div class="filter-menu">
+                <button class="filter-btn active" onclick="applyFilters('mimados', this)">Mimados</button>
+                <button class="filter-btn" onclick="applyFilters('2026', this)">2026</button>
+                <button class="filter-btn" onclick="applyFilters('2025', this)">2025</button>
+                <button class="filter-btn" onclick="applyFilters('decima', this)">Décimas</button>
+            </div>
+        </div>
+        
+        <div class="catalog-list" id="dynamic-list">
+
+            <a class="cat-entry" href="tuerto.html" data-cat="2026 mimados">
+                <span class="cat-title-link">Tuerto</span>
+                <span class="cat-description">Con el lomo en el petate lloraba un paquidermo...</span>
+            </a>
+
+            <a class="cat-entry" href="charal.html" data-cat="2026 mimados">
+                <span class="cat-title-link">Charal</span>
+                <span class="cat-description">Y la cornea se me manchó de pulque...</span>
+            </a>
+
+            <a class="cat-entry" href="argel.html" data-cat="2026 decima">
+                <span class="cat-title-link">Argel</span>
+                <span class="cat-description">Jade, zarco, negro y miel, un rosario parte montes...</span>
+            </a>
+
+            <a class="cat-entry" href="ciruelo.html" data-cat="2026 decima mimados">
+                <span class="cat-title-link">Ciruelo</span>
+                <span class="cat-description">Reloj arrastra el vuelo; segundero morfa a cana.</span>
+            </a>
+
+            <a class="cat-entry" href="santa.html" data-cat="2026 decima">
+                <span class="cat-title-link">Santa canela</span>
+                <span class="cat-description">Yemas que buscan costura en arrugas, campo santo...</span>
+            </a>
+
+            <a class="cat-entry" href="nosotros.html" data-cat="2026">
+                <span class="cat-title-link">Nosotros</span>
+                <span class="cat-description">Y aquellas alas de cisne al viento, como cortejo…</span>
+            </a>
+
+            <a class="cat-entry" href="baraja.html" data-cat="2026">
+                <span class="cat-title-link">Baraja</span>
+                <span class="cat-description">Bajo el cielo de julio, Dios marcaría mi baraja.</span>
+            </a>
+
+            <a class="cat-entry" href="arco.html" data-cat="2026 decima">
+                <span class="cat-title-link">Arco</span>
+                <span class="cat-description">Cuando los dioses tropiezan, y su viento muera parco...</span>
+            </a>
+
+            <a class="cat-entry" href="melina.html" data-cat="2026 mimados">
+                <span class="cat-title-link">Melina</span>
+                <span class="cat-description">Melena enmarañada en que, con el lejano claro de luna...</span>
+            </a>
+
+            <a class="cat-entry" href="devocion.html" data-cat="2025 ">
+                <span class="cat-title-link">Devoción</span>
+                <span class="cat-description">Ser un cerro; que el viento de tus pestañas agite un huizache...</span>
+            </a>
+
+            <a class="cat-entry" href="desnudez.html" data-cat="2025">
+                <span class="cat-title-link">Desnudez</span>
+                <span class="cat-description">Visiones que se esconden bajo lunares imposibles de una renacida piel...</span>
+            </a>
+
+            <a class="cat-entry" href="los-derviches.html" data-cat="2025 mimados">
+                <span class="cat-title-link">Derviches</span>
+                <span class="cat-description">La armoniosa obra de una gran voluntad primigenia...</span>
+            </a>
+
+            <a class="cat-entry" href="saprofito.html" data-cat="2025">
+                <span class="cat-title-link">Saprofito</span>
+                <span class="cat-description">Así un mono viste de seda púrpura y sentado al borde del abismo...</span>
+            </a>
+
+            <a class="cat-entry" href="paimoideo.html" data-cat="2025">
+                <span class="cat-title-link">Paimoideo</span>
+                <span class="cat-description">Mientras vacas desenvuelven el invisible aliado de su agave...</span>
+            </a>
+
+            <a class="cat-entry" href="roca-virgen.html" data-cat="2025">
+                <span class="cat-title-link">Roca Vírgen</span>
+                <span class="cat-description">Rasga el talego desbordado de roca virgen, material de tu escultura...</span>
+            </a>
+
+            <a class="cat-entry" href="zapito.html" data-cat="2025 mimados">
+                <span class="cat-title-link">Zapito</span>
+                <span class="cat-description">Guardo la mesa en la que, de aquella taza, bebía la calidez...</span>
+            </a>
+
+            <a class="cat-entry" href="enraizado-velo.html" data-cat="2025">
+                <span class="cat-title-link">Enraizado Velo</span>
+                <span class="cat-description">Iza el arco, desgarra el tronco de su vieja ciencia...</span>
+            </a>
+
+            <a class="cat-entry" href="iluso-sentimiento.html" data-cat="2025">
+                <span class="cat-title-link">Iluso Sentimiento</span>
+                <span class="cat-description">Aquí, donde no cabe la duda, la angustia, el lenguaje, el amor...</span>
+            </a>
+
+            <a class="cat-entry" href="profanacion.html" data-cat="2025">
+                <span class="cat-title-link">Profanación</span>
+                <span class="cat-description">Que baje la cruz y descanse a las rodillas faltas de cama...</span>
+            </a>
+
+            <a class="cat-entry" href="amor-de-aves.html" data-cat="2025">
+                <span class="cat-title-link">Amor de Aves</span>
+                <span class="cat-description">Sería egoísta ponernos nombres, si lo que más nos enamora...</span>
+            </a>
+
+            <a class="cat-entry" href="corazon-perdido.html" data-cat="2025">
+                <span class="cat-title-link">Corazón Perdido</span>
+                <span class="cat-description">Un corazón arrojado al mar por un cuervo, que con fe se lanzó al abismo...</span>
+            </a>
+
+            <a class="cat-entry" href="ultima-carta.html" data-cat="2025">
+                <span class="cat-title-link">Última Carta</span>
+                <span class="cat-description">De aquella sonrisa que impregna mi esencia cuando esta yace en blanco...</span>
+            </a>
+
+            <a class="cat-entry" href="armonico.html" data-cat="2025 mimados">
+                <span class="cat-title-link">Armónico</span>
+                <span class="cat-description">Y al fin, después de tanto, dejo de herirme la vida...</span>
+            </a>
+
+            <a class="cat-entry" href="secretos-del-girasol.html" data-cat="2025">
+                <span class="cat-title-link">Secretos del Girasol</span>
+                <span class="cat-description">La Tierra gira en un espacio mil veces recorrido...</span>
+            </a>
+
+            <a class="cat-entry" href="pureza.html" data-cat="2025">
+                <span class="cat-title-link">Pureza</span>
+                <span class="cat-description">Y es justamente en ese colapso cósmico, en esa tan sonada infinidad...</span>
+            </a>
+
+            <a class="cat-entry" href="esperandote.html" data-cat="2025">
+                <span class="cat-title-link">Esperándote</span>
+                <span class="cat-description">¿Dónde te escondes que no te encuentro? Necesito de ti y sigues escondida...</span>
+            </a>
+
+            <a class="cat-entry" href="ella.html" data-cat="2025">
+                <span class="cat-title-link">Ella</span>
+                <span class="cat-description">La más bella flor del jardín de mis pensamientos, reaviva mis deseos...</span>
+            </a>
+
+            <a class="cat-entry" href="dos-locos.html" data-cat="2025">
+                <span class="cat-title-link">Dos locos</span>
+                <span class="cat-description">Seremos dos locos creando una historia que a nadie más fuera de nosotros...</span>
+            </a>
+
+        </div>
+        
+    </div>
+
+    <script>
+        function applyFilters(category, button) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            if(button) button.classList.add('active');
+            
+            const poems = document.querySelectorAll('.cat-entry');
+            poems.forEach(poem => {
+                const categories = poem.getAttribute('data-cat').split(' ');
+                if (categories.includes(category)) {
+                    poem.classList.remove('hidden');
+                } else {
+                    poem.classList.add('hidden');
+                }
+            });
+        }
+
+        // Abre de manera predeterminada la lista de Mimados al cargar el DOM
+        document.addEventListener("DOMContentLoaded", function() {
+            const defaultButton = document.querySelector('.filter-btn.active');
+            applyFilters('mimados', defaultButton);
+        });
+    </script>
+
+</body>
+</html>
