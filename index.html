@@ -8,23 +8,25 @@
     <link rel="icon" type="image/png" href="icon.png"> 
     <link href="https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Regla específica para hacer más grande el logo en la página de inicio */
+        /* AJUSTE AQUÍ: Añadido width 100% y padding para que nunca se desborde en celulares */
         .landing-container .site-logo {
+            width: 100%;
             max-width: 600px; 
+            height: auto;
             margin-bottom: 10px;
+            padding: 0 20px; /* Evita que choque de manera tosca contra los bordes físicos del teléfono */
         }
 
         /* Transformamos el botón en un texto puro y minimalista */
         .landing-container .minimal-button {
             font-family: 'Ballet', cursive !important;
-            font-size: 3em; /* Un poco más grande para darle presencia al ser solo texto */
+            font-size: 3em; 
             color: var(--plata);
             text-decoration: none;
             text-transform: none;
             transition: color 0.3s ease, transform 0.3s ease;
             display: inline-block;
             
-            /* Quitamos cualquier rastro de bordes, fondos o sombras que heredara del CSS */
             background: none !important;
             border: none !important;
             padding: 0 !important;
@@ -34,7 +36,7 @@
         /* Efecto sutil al pasar el cursor sobre el texto */
         .landing-container .minimal-button:hover {
             color: var(--text);
-            transform: scale(1.02); /* Crece un milímetro de forma muy orgánica */
+            transform: scale(1.02); 
         }
     </style>
 </head>
